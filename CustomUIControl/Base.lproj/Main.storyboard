@@ -23,9 +23,9 @@
                                 </connections>
                             </containerView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5XX-PF-bac">
-                                <rect key="frame" x="0.0" y="758" width="393" height="74"/>
+                                <rect key="frame" x="0.0" y="758" width="393" height="94"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ECy-YN-7EV">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="74"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="94"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUB-j9-njZ" customClass="ImageSelector" customModule="CustomUIControl" customModuleProvider="target">
@@ -41,7 +41,7 @@
                                     <constraints>
                                         <constraint firstItem="nUB-j9-njZ" firstAttribute="top" secondItem="ECy-YN-7EV" secondAttribute="topMargin" constant="8" id="0n5-Ek-Rak"/>
                                         <constraint firstItem="nUB-j9-njZ" firstAttribute="leading" secondItem="ECy-YN-7EV" secondAttribute="leadingMargin" id="Q6X-ZM-9l2"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="nUB-j9-njZ" secondAttribute="bottom" id="cCe-SI-Cla"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="nUB-j9-njZ" secondAttribute="bottom" constant="20" id="cCe-SI-Cla"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="nUB-j9-njZ" secondAttribute="trailing" id="vhO-jY-HjT"/>
                                     </constraints>
                                 </view>
@@ -70,7 +70,7 @@
                             <constraint firstItem="5XX-PF-bac" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NfX-0W-Wuv"/>
                             <constraint firstAttribute="bottom" secondItem="WPJ-eh-tsT" secondAttribute="bottom" id="O1F-dW-x9J"/>
                             <constraint firstAttribute="trailing" secondItem="5XX-PF-bac" secondAttribute="trailing" id="T4z-0j-FDU"/>
-                            <constraint firstAttribute="bottom" secondItem="5XX-PF-bac" secondAttribute="bottom" constant="20" id="sgg-Da-bAp"/>
+                            <constraint firstAttribute="bottom" secondItem="5XX-PF-bac" secondAttribute="bottom" id="sgg-Da-bAp"/>
                         </constraints>
                     </view>
                     <connections>
