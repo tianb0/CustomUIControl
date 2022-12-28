@@ -16,6 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPJ-eh-tsT">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <connections>
+                                    <segue destination="h2G-vG-DsV" kind="embed" identifier="embededList" id="BwV-RK-dxW"/>
+                                </connections>
+                            </containerView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5XX-PF-bac">
                                 <rect key="frame" x="0.0" y="758" width="393" height="74"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ECy-YN-7EV">
@@ -47,6 +53,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button">
                                     <color key="baseForegroundColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addMoodTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aJj-yE-1WZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -54,8 +63,12 @@
                         <constraints>
                             <constraint firstItem="FRH-Oh-Idm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Ub-7f-psk"/>
                             <constraint firstItem="5XX-PF-bac" firstAttribute="top" secondItem="FRH-Oh-Idm" secondAttribute="bottom" constant="20" id="514-qk-idV"/>
+                            <constraint firstAttribute="trailing" secondItem="WPJ-eh-tsT" secondAttribute="trailing" id="84Z-vz-Ycg"/>
                             <constraint firstItem="FRH-Oh-Idm" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="ArU-ef-ZDm"/>
+                            <constraint firstItem="WPJ-eh-tsT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DbL-Io-UpZ"/>
+                            <constraint firstItem="WPJ-eh-tsT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="KpS-uI-dnX"/>
                             <constraint firstItem="5XX-PF-bac" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NfX-0W-Wuv"/>
+                            <constraint firstAttribute="bottom" secondItem="WPJ-eh-tsT" secondAttribute="bottom" id="O1F-dW-x9J"/>
                             <constraint firstAttribute="trailing" secondItem="5XX-PF-bac" secondAttribute="trailing" id="T4z-0j-FDU"/>
                             <constraint firstAttribute="bottom" secondItem="5XX-PF-bac" secondAttribute="bottom" constant="20" id="sgg-Da-bAp"/>
                         </constraints>
@@ -68,6 +81,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+        <!--Mood List View Controller-->
+        <scene sceneID="php-Y2-qas">
+            <objects>
+                <tableViewController id="h2G-vG-DsV" customClass="MoodListViewController" customModule="CustomUIControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="iv6-2Z-gwj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoodCell" id="J8k-Vk-O6H">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J8k-Vk-O6H" id="z2Z-NS-ZvO">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="h2G-vG-DsV" id="1eL-gN-BGk"/>
+                            <outlet property="delegate" destination="h2G-vG-DsV" id="V5M-t4-16R"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHx-Xk-wWG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="-10"/>
         </scene>
     </scenes>
     <resources>
