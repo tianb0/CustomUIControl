@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomUIControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5XX-PF-bac">
+                                <rect key="frame" x="0.0" y="758" width="393" height="74"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ECy-YN-7EV">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="74"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nUB-j9-njZ" customClass="ImageSelector" customModule="CustomUIControl" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="16" width="377" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="DHt-h3-IBc"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="moodSelectionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="i66-PL-Fna"/>
+                                            </connections>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nUB-j9-njZ" firstAttribute="top" secondItem="ECy-YN-7EV" secondAttribute="topMargin" constant="8" id="0n5-Ek-Rak"/>
+                                        <constraint firstItem="nUB-j9-njZ" firstAttribute="leading" secondItem="ECy-YN-7EV" secondAttribute="leadingMargin" id="Q6X-ZM-9l2"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="nUB-j9-njZ" secondAttribute="bottom" id="cCe-SI-Cla"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nUB-j9-njZ" secondAttribute="trailing" id="vhO-jY-HjT"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRH-Oh-Idm">
+                                <rect key="frame" x="98.333333333333329" y="703" width="196.33333333333337" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                    <color key="baseForegroundColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FRH-Oh-Idm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Ub-7f-psk"/>
+                            <constraint firstItem="5XX-PF-bac" firstAttribute="top" secondItem="FRH-Oh-Idm" secondAttribute="bottom" constant="20" id="514-qk-idV"/>
+                            <constraint firstItem="FRH-Oh-Idm" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="ArU-ef-ZDm"/>
+                            <constraint firstItem="5XX-PF-bac" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NfX-0W-Wuv"/>
+                            <constraint firstAttribute="trailing" secondItem="5XX-PF-bac" secondAttribute="trailing" id="T4z-0j-FDU"/>
+                            <constraint firstAttribute="bottom" secondItem="5XX-PF-bac" secondAttribute="bottom" constant="20" id="sgg-Da-bAp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addMoodButton" destination="FRH-Oh-Idm" id="FBU-LC-rNG"/>
+                        <outlet property="moodSelector" destination="nUB-j9-njZ" id="Pca-VQ-RoS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
