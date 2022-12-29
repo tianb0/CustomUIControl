@@ -31,7 +31,12 @@ class ViewController: UIViewController {
             }
             addMoodButton.setTitle("I'm \(currentMood.name)", for: .normal)
             // do not set background color from storyboard otherwise the background and radius won't change
-            addMoodButton.backgroundColor = currentMood.color
+//            addMoodButton.backgroundColor = currentMood.color
+            
+            let selectionAnimator = UIViewPropertyAnimator(duration: 3, dampingRatio: 0.7) {
+                self.addMoodButton.backgroundColor = currentMood.color
+            }
+            selectionAnimator.startAnimation()
         }
     }
 
