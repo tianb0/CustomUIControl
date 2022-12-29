@@ -20,6 +20,8 @@ class ImageSelector: UIControl {
                 selectedIndex = imageButtons.count - 1
             }
             
+            highlightView.backgroundColor = highlightColor(forIndex: selectedIndex)
+            
             let imageButton = imageButtons[selectedIndex]
             highlightViewXConstraint = highlightView.centerXAnchor.constraint(equalTo: imageButton.centerXAnchor)
         }
@@ -47,6 +49,19 @@ class ImageSelector: UIControl {
         }
     }
     
+    var highlightColors: [UIColor] = [] {
+        didSet {
+            highlightView.backgroundColor = highlightColor(forIndex: selectedIndex)
+        }
+    }
+    
+    private func highlightColor(forIndex index: Int) -> UIColor {
+        guard index >= 0 && index < highlightColors.count else {
+            return UIColor.blue.withAlphaComponent(0.6)
+        }
+        return highlightColors[index]
+    }
+    
     private let selectorStackView: UIStackView = {
         let stackView = UIStackView()
         
@@ -66,7 +81,7 @@ class ImageSelector: UIControl {
         //        selectedIndex = index
         
         let selectionAnimator = UIViewPropertyAnimator(
-            duration: 0.3,
+            duration: 3,
 //            curve: .easeInOut,
             dampingRatio: 0.7,
             animations: {
@@ -106,7 +121,7 @@ class ImageSelector: UIControl {
     
     private let highlightView: UIView = {
         let view = UIView()
-        view.backgroundColor = view.tintColor
+//        view.backgroundColor = view.tintColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
