@@ -63,7 +63,18 @@ class ImageSelector: UIControl {
         guard let index = imageButtons.firstIndex(of: sender) else {
             preconditionFailure("Unmatched button")
         }
-        selectedIndex = index
+        //        selectedIndex = index
+        
+        let selectionAnimator = UIViewPropertyAnimator(
+            duration: 0.3,
+//            curve: .easeInOut,
+            dampingRatio: 0.7,
+            animations: {
+                self.selectedIndex = index
+                self.layoutIfNeeded()
+            })
+        selectionAnimator.startAnimation()
+        
         // notify observers
         sendActions(for: .valueChanged)
     }
@@ -94,7 +105,7 @@ class ImageSelector: UIControl {
     }
     
     private let highlightView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = view.tintColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
